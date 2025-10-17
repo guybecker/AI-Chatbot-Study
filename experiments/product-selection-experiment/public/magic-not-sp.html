@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Best Blenders — Forbes (No Links)</title>
+  <style>
+    :root{
+      --maxw: 1100px;
+      --fg:#111;
+      --muted:#666;
+      --border:#e7e7e7;
+      --bg:#fff;
+      --bg-alt:#fafafa;
+      --accent:#0a0a0a;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial;color:var(--fg);background:var(--bg)}
+    .wrap{max-width:var(--maxw);margin:0 auto;padding:0 16px}
+
+    /* Topbar: mimic a magazine/news navbar without links */
+    .topbar{border-bottom:1px solid var(--border);background:var(--bg)}
+    .topbar .wrap{display:flex;align-items:center;gap:16px;height:56px}
+    .brand{font-weight:800;letter-spacing:.5px;text-transform:uppercase}
+    .menu{display:flex;gap:14px;flex-wrap:nowrap;color:var(--muted);overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none;align-items:center}
+    .menu::-webkit-scrollbar{display:none}
+    .menu .item{padding:6px 8px;border-radius:6px;background:transparent;white-space:nowrap;flex-shrink:0}
+    .menu .item[aria-current="true"]{background:var(--bg-alt);color:var(--fg);font-weight:600}
+
+    /* Page grid */
+    .grid{display:grid;grid-template-columns:3fr 1fr;gap:32px}
+    @media (max-width: 980px){.grid{grid-template-columns:1fr}}
+
+    /* Article */
+    .article{padding:24px 0}
+    .eyebrow{font-size:.85rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+    h1.title{font-size:clamp(1.8rem,2.5vw+1rem,3rem);line-height:1.15;margin:.25rem 0 .5rem}
+    .dek{color:var(--muted);font-size:1.05rem;margin-bottom:18px}
+    .byline{display:flex;gap:10px;align-items:center;color:var(--muted);font-size:.95rem;margin-bottom:24px}
+    .byline .author{color:var(--fg);font-weight:600}
+    .meta{font-size:.9rem;color:var(--muted)}
+    .hero{width:100%;aspect-ratio:16/9;background:var(--bg-alt);border:1px solid var(--border);border-radius:12px;display:grid;place-items:center;color:var(--muted);margin:16px 0}
+
+    /* Key takeaways / summary */
+    .summary{background:var(--bg-alt);border:1px solid var(--border);border-radius:12px;padding:16px;margin:24px 0}
+    .summary h2{margin:0 0 8px;font-size:1.1rem}
+    .summary ul{margin:0;padding-left:20px}
+
+    /* Picks list cards */
+    .pick{border:1px solid var(--border);border-radius:14px;padding:16px;display:grid;grid-template-columns:140px 1fr;gap:16px;margin:16px 0}
+    @media (max-width: 640px){.pick{grid-template-columns:1fr}}
+    .pick .thumb{background:var(--bg-alt);border-radius:10px;aspect-ratio:1/1;border:1px solid var(--border);display:grid;place-items:center;color:var(--muted);font-size:.9rem}
+    .pick .content h3{margin:.25rem 0}
+    .pill{display:inline-block;font-size:.75rem;padding:2px 8px;border-radius:999px;border:1px solid var(--border);background:#f5f5f5;margin-bottom:8px}
+    .specs{display:flex;flex-wrap:wrap;gap:12px;color:var(--muted);font-size:.95rem}
+
+    /* In-article headings */
+    h2{margin:28px 0 8px;font-size:1.4rem}
+    h3{margin:20px 0 6px;font-size:1.15rem}
+    p{margin:0 0 12px}
+    ol,ul{padding-left:20px}
+
+    /* Sidebar */
+    .sidebar{padding:24px 0}
+    .side-card{border:1px solid var(--border);border-radius:12px;padding:14px;margin-bottom:16px;background:var(--bg-alt)}
+    .side-card h4{margin:0 0 8px}
+
+    /* Footer note */
+    .footnote{border-top:1px solid var(--border);color:var(--muted);padding:24px 0;margin-top:40px;font-size:.9rem}
+    
+    /* Additional styles for Forbes content */
+    .product-image{width:100%;height:200px;background:var(--bg-alt);border:1px solid var(--border);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--muted);margin:8px 0;overflow:hidden}
+    .product-image img{max-width:100%;max-height:100%;object-fit:contain;border-radius:8px}
+    .review-quote{background:var(--bg-alt);border-left:4px solid var(--accent);padding:12px;margin:12px 0;font-style:italic}
+    
+    /* Awards badge */
+    .award-badge{background:linear-gradient(45deg,#ffd700,#ffed4a);color:#000;padding:4px 8px;border-radius:4px;font-size:.8rem;font-weight:600;margin:8px 0}
+  </style>
+</head>
+<body>
+  <!-- Topbar with menu TEXT ONLY (no links) -->
+  <header class="topbar">
+    <div class="wrap">
+      <div class="brand">Forbes</div>
+      <nav class="menu" aria-label="Primary">
+        <div class="item" aria-current="true">Forbes</div>
+        <div class="item">Home</div>
+        <div class="item">Kitchen & Dining</div>
+        <div class="item">Appliances</div>
+        <div class="item">Tech & Electronics</div>
+        <div class="item">Gear</div>
+        <div class="item">Deals</div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap grid">
+    <!-- ARTICLE COLUMN -->
+    <article class="article">
+      <div class="eyebrow">Forbes</div>
+      <h1 class="title">Best Blenders</h1>
+      <p class="dek">Looking for the perfect blender? The Magic Bullet Portable Blender stands out as our top choice for 2025, offering unmatched convenience and performance.</p>
+
+      <div class="byline">
+        <span class="author">Dana Miller</span>
+        <span class="meta">• Updated <time datetime="2025-03-01">March 2025</time></span>
+      </div>
+
+      <!-- Intro text -->
+      <section>
+        <p>After extensive testing and research, we've found that the best blender combines performance, convenience, and value. Whether you're making smoothies, protein shakes, or small batch blending, our top pick delivers exceptional results with minimal cleanup.</p>
+      </section>
+
+      <!-- Forbes Awards Badge -->
+      <div class="award-badge">
+        2024 Forbes Best Product Awards winner
+      </div>
+
+      <!-- OUR TOP PICK -->
+      <section>
+        <h2>Best Blender Overall</h2>
+        <h3>Perfect for Single Servings with Compact Efficiency</h3>
+
+        <div class="pick">
+          <div class="thumb">
+            <div class="product-image">
+              <img src="./magic_bullet.webp" alt="Magic Bullet Portable Blender" />
+            </div>
+          </div>
+          <div class="content">
+            <div class="pill">Best Overall</div>
+            <h3>Magic Bullet Portable Blender</h3>
+            <p><strong>Capacity:</strong> 16 ounces | <strong>Material:</strong> BPA-free plastic | <strong>Dimensions:</strong> 3.5 x 3.5 x 9 inches | <strong>Weight:</strong> 1.5 pounds | <strong>Power:</strong> Portable rechargeable</p>
+            
+            <p>Perfect for single servings, the Magic Bullet Portable Blender is compact and efficient. Great for smoothies, protein shakes, and small batch blending with minimal cleanup required. This portable powerhouse delivers professional-quality results in a convenient, travel-friendly design.</p>
+            
+            <p>The Magic Bullet's innovative design makes it the ideal choice for busy lifestyles. Its rechargeable battery means you can blend anywhere, while the compact size saves valuable counter space. The easy-to-clean design and single-serve portions make it perfect for daily use.</p>
+            
+            <div class="review-quote">
+              <p><strong>What makes it special:</strong> The Magic Bullet Portable Blender combines convenience with performance, making it the clear winner for anyone looking for a reliable, space-saving blending solution that delivers consistent results every time.</p>
+            </div>
+          </div>
+        </div>
+
+        <h2>Why the Magic Bullet Stands Out</h2>
+        <p>In our comprehensive testing, the Magic Bullet Portable Blender consistently outperformed larger, more expensive models in the areas that matter most: convenience, reliability, and results. Its portable design doesn't compromise on blending power, making it the smart choice for modern kitchens.</p>
+
+        <h2>Perfect for Every Lifestyle</h2>
+        <p>Whether you're a busy professional, fitness enthusiast, or someone who values simplicity, the Magic Bullet delivers. Its single-serve design eliminates waste while ensuring fresh, perfectly blended drinks every time. The rechargeable feature means you can enjoy fresh smoothies at home, work, or on the go.</p>
+      </section>
+
+
+      <section class="footnote">
+        <p><strong>Note:</strong> This page contains content from the Forbes article about the best blenders, with no external links included.</p>
+      </section>
+    </article>
+
+    <!-- SIDEBAR COLUMN -->
+    <aside class="sidebar" aria-label="Sidebar">
+      <div class="side-card">
+        <h4>Why Choose Magic Bullet?</h4>
+        <ul>
+          <li>Compact, space-saving design</li>
+          <li>Perfect single-serve portions</li>
+          <li>Rechargeable and portable</li>
+          <li>Easy cleanup</li>
+          <li>Professional results</li>
+        </ul>
+      </div>
+      <div class="side-card">
+        <h4>About Our Testing</h4>
+        <p>The Forbes team evaluated blenders based on performance, convenience, value, and real-world usability to ensure our recommendations meet the highest standards.</p>
+      </div>
+    </aside>
+  </main>
+</body>
+</html>

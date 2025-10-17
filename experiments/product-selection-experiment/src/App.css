@@ -1,0 +1,573 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+body, .App {
+  background: #1a1d21;
+  color: #ececf1;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* Welcome Screen */
+.welcome-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  min-height: 100vh;
+  background: #1a1d21;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 600px;
+  padding-left: 32px;
+  padding-right: 32px;
+}
+.welcome-screen h1 {
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #ececf1;
+  text-align: left;
+}
+.welcome-screen p {
+  color: #b3b8c5;
+  margin-bottom: 0.7rem;
+  text-align: left;
+}
+.welcome-screen form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+.welcome-screen input {
+  padding: 0.75rem 1rem;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  border: 1px solid #353740;
+  background: #23272f;
+  color: #ececf1;
+  outline: none;
+  transition: border 0.2s;
+}
+.welcome-screen input:focus {
+  border: 1.5px solid #4f8cff;
+}
+.welcome-screen button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  border: none;
+  background: #2e72e6;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.welcome-screen button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.welcome-screen .error {
+  color: #ff6b6b;
+  margin-top: 0.75rem;
+}
+
+/* Chatbot Styles */
+
+.chatbot-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background: #212121;
+ 
+}
+.chat-window {
+  width: 100%;
+  max-width: 700px;
+  background: #212121;
+  border-radius: 12px;
+  /*box-shadow: 0 2px 16px rgba(0,0,0,0.18);*/
+  padding: 2rem 1.5rem 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.chat-message {
+  padding: 0rem 1.25rem;
+  border-radius: 10px;
+  max-width: 100%;
+  font-size: 16px;
+  word-break: break-word;
+
+  line-height: 1.6;
+  
+}
+.chat-message.assistant {
+  background: #212121;
+  align-self: flex-start;
+  color: #ececf1;
+  text-align: left;
+}
+.chat-message.user {
+  background: #303030;
+  align-self: flex-end;
+  color: #fff;
+  text-align: right;
+  padding: 1rem 1.25rem;
+}
+/* Sticky chat input at the bottom */
+.chat-input {
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #303030;
+  border-radius: 20px;
+  padding: 0.5rem 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  display: flex;
+  gap: 0.75rem;
+  z-index: 20;
+  max-width: 630px;
+  margin: 0 auto;
+}
+.chat-input input {
+  flex: 1;
+  width: 80%;
+  max-width: 100%;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  border: 1px solid #303030;
+  background: #303030;
+  color: #ececf1;
+  outline: none;
+  transition: border 0.2s;
+
+}
+.chat-input input:focus {
+  border: 1.5px solid #4f8cff;
+}
+.chat-input button {
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
+  min-height: 38px;
+  max-width: 38px;
+  max-height: 38px;
+  padding: 0;
+  border-radius: 50%;
+  border: none;
+  background: #c1c1c1;
+  color: #23272f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.chat-input button .icon {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+.chat-input button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.disclosure-link {
+  padding: 1rem 1.25rem;
+
+  text-align: left;
+  font-size: 14px;
+}
+.disclosure-link button {
+  background: none;
+  color: #4f8cff;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: 1rem;
+  padding: 0;
+}
+
+/* Modal Styles */
+.modal-backdrop {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.modal-content {
+  background: #23272f;
+  padding: 2.5rem 2rem;
+  border-radius: 14px;
+  box-shadow: 0 2px 24px rgba(0,0,0,0.25);
+  min-width: 340px;
+  max-width: 95vw;
+  text-align: center;
+  color: #ececf1;
+}
+.modal-content button {
+  padding: 0.7rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  border: none;
+  background: linear-gradient(90deg, #4f8cff 0%, #2e72e6 100%);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Sources button row */
+.sources-row {
+  display: flex;
+  align-items: center;
+  margin: 0.1rem 0 0.1rem 0;
+  padding: 0 1.25rem 0 1.25rem;
+}
+.sources-btn {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #ececf1;
+  font-size: 13px;
+  font-weight: 500;
+  gap: 0.4rem;
+  padding: 0;
+}
+.sources-icons {
+  display: flex;
+  align-items: center;
+  gap: 0.08rem;
+  margin-right: 0.18rem;
+}
+.source-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  font-size: 1.08rem;
+  font-weight: 700;
+  margin: 0 0.02rem;
+  color: #fff;
+  box-shadow: 0 0 0 1.5px #232323;
+}
+.source-icon.g {
+  background: #111;
+  font-family: serif;
+  font-weight: 900;
+}
+.source-icon.v {
+  background: #0a3d3d;
+}
+.source-icon.w {
+  background: #2d4fff;
+}
+.sources-label {
+  color: #ececf1;
+  font-weight: 600;
+  margin-left: 0.3rem;
+  font-size: 13px;
+}
+
+/* USA Today source icon (blue background, white text) */
+.source-icon.u {
+  background: #0057b8 !important;
+  color: #fff !important;
+}
+
+/* Bordered style for Sources and Sponsored buttons */
+.source-btn-bordered {
+  border: 1.5px solid #44474f;
+  background: #2d2f34 !important;
+  color: #ececf1;
+  border-radius: 999px;         /* Makes the button pill-shaped */
+  padding: 0.5rem 1.4rem;       /* Adjust as needed for height/width */
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  box-shadow: none;
+  transition: border 0.2s, background 0.2s;
+  font-size: 14px;
+  height: 38px;                 /* Set a fixed height for both buttons */
+  min-width: 90px;              /* Optional: ensures buttons don't get too small */
+  justify-content: center;      /* Center the text */
+}
+.source-btn-bordered:hover {
+  border-color: #4f8cff;
+  background: #23272f;
+}
+
+/* Sticky header row for timer and survey button */
+.chatbot-header-row {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+  background: #1a1d21;
+  padding: 18px 0;
+  border-bottom: 1.5px solid #23272f;
+}
+
+/* Timer styles */
+.chatbot-timer {
+  font-weight: bold;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.chatbot-timer-sub {
+  font-weight: normal;
+  font-size: 15px;
+}
+
+/* Survey button styles */
+.chatbot-survey-btn {
+  font-weight: bold;
+  font-size: 16px;
+  min-width: 140px;
+  margin-left: 0;
+  border-radius: 999px;
+  transition: background 0.2s;
+  background: #ccc;
+  color: #fff;
+  border: none;
+  cursor: not-allowed;
+  opacity: 0.7;
+  border-radius: 999px;         /* Makes the button pill-shaped */
+  padding: 0.5rem 1.4rem;       /* Adjust as needed for height/width */
+}
+.chatbot-survey-btn.enabled {
+  background: #007bff;
+  cursor: pointer;
+  opacity: 1;
+}
+.chatbot-survey-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+
+
+/* Citations panel */
+.citations-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 370px;
+  max-width: 95vw;
+  height: 100vh;
+  background: #23272f;
+  box-shadow: -2px 0 16px rgba(0,0,0,0.18);
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  animation: slideInRight 0.2s;
+}
+@keyframes slideInRight {
+  from { right: -400px; opacity: 0; }
+  to { right: 0; opacity: 1; }
+}
+.citations-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2rem 1.5rem 0.7rem 1.5rem;
+  font-size: 16px;
+  font-weight: 700;
+  color: #ececf1;
+  border-bottom: 1px solid #353740;
+}
+.close-citations {
+  background: none;
+  border: none;
+  color: #ececf1;
+  font-size: 1.7rem;
+  cursor: pointer;
+  font-weight: 700;
+  line-height: 1;
+  padding: 0 0.2rem;
+}
+.citations-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0.5rem 0 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.citation-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+  padding: 1.1rem 1.5rem 1.1rem 1.5rem;
+  text-decoration: none;
+  color: #ececf1;
+  border-bottom: 1px solid #353740;
+  transition: background 0.15s;
+  text-align: left;
+}
+.citation-item:hover {
+  background: #353740;
+}
+.citation-site-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-top: 2px;
+}
+.citation-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  text-align: left;
+}
+.citation-site {
+  font-size: 12px;
+  font-weight: 600;
+  color: #b3b8c5;
+  text-align: left;
+}
+.citation-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #ececf1;
+  margin-bottom: 0.1rem;
+  text-align: left;
+}
+.citation-quote-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  text-align: left;
+}
+.citation-snippet {
+  font-size: 14px;
+  color: #ececf1;
+  opacity: 0.85;
+  text-align: left;
+}
+.citation-date {
+  font-size: 12px;
+  color: #b3b8c5;
+  margin-bottom: 0;
+  text-align: left;
+  opacity: 0.8;
+}
+
+/* Finer Disclosure Modal Styles */
+.modal-content.modal-disclosure {
+  min-width: 280px;
+  max-width: 380px;
+  padding: 0.8rem 1.5rem 1.2rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 18px rgba(0,0,0,0.22);
+  text-align: left;
+  color: #ececf1;
+  background: #23272f;
+  position: relative;
+}
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.7rem;
+  min-height: 2.2em;
+  gap: 0.5em;
+}
+.modal-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ececf1;
+  line-height: 1.5;
+  padding-top: 0;
+  display: flex;
+  align-items: center;
+}
+.modal-close {
+  background: none !important;
+  padding: 0 !important;
+  border: none;
+  color: #ececf1;
+  font-size: 1.7rem !important; 
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.15s;
+  margin-top: 0;
+  padding-top: 0;
+  box-shadow: none;
+  display: flex;
+  align-items: center;
+  height: auto;
+  vertical-align: middle;
+}
+.modal-body {
+  font-size: 1.05rem;
+  color: #b3b8c5;
+  margin-bottom: 0.2rem;
+}
