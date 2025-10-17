@@ -2,7 +2,7 @@
 
 This repository contains two frontend experiments for a chatbot research study focused on disclosure mechanisms and user interaction patterns. The experiments are designed to test different approaches to presenting sponsored content and disclosure information in conversational AI interfaces.
 
-This repo was created to support the study that was conducted by Dr. Uri Yosef Hacohen, Tel-Aviv University, reachable at https://en-law.tau.ac.il/profile/urihacohen and was funded by a non-profit organization committed to fundamental research and education. The data collected during this study did not include any personally identifiable information and will be used only for the purpose of this study.
+This repo was created to support the study that was conducted by Dr. Uri Yosef Hacohen, Tel-Aviv University, reachable at https://en-law.tau.ac.il/profile/urihacohen and was funded by The Israel Science Foundation. The data collected during this study did not include any personally identifiable information and will be used only for the purpose of this study.
 
 ## 🧪 Experiments Overview
 
@@ -39,7 +39,7 @@ This repo was created to support the study that was conducted by Dr. Uri Yosef H
 
 This repository contains only the **frontend experiments**. The backend API is maintained in a separate repository:
 
-**Backend Repository**: [@https://github.com/guybecker/chatbot-project-backend](https://github.com/guybecker/chatbot-project-backend)
+**Backend Repository**: [https://github.com/guybecker/chatbot-project-backend](https://github.com/guybecker/chatbot-project-backend)
 
 ## 🚀 Quick Start
 
